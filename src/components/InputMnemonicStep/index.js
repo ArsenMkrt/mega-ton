@@ -4,8 +4,6 @@ import React from "react";
 
 const styles = (theme) => ({
     root: {
-        marginTop: theme.spacing(1),
-        marginBottom: theme.spacing(1),
     },
     mnemonicBox: {
         margin: theme.spacing(3),
