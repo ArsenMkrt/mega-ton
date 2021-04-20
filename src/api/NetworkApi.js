@@ -9,7 +9,6 @@ const _networks = [
         short: 'TON',
         description: 'Main Ton Network',
         logo32: TonLogo32,
-        color: '#36AAFB',
         accountExplorerUrl: (addr) => {
             return `https://ton.live/accounts/accountDetails?id=${addr}`
         },
@@ -21,7 +20,6 @@ const _networks = [
         short: 'Ruby',
         description: 'Ton Rubin(Test) Network',
         logo32: RubyLogo32,
-        color: '#DF116F',
         accountExplorerUrl: (addr) => {
             return `https://net.ton.live/accounts/accountDetails?id=${addr}`
         },

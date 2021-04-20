@@ -1,4 +1,4 @@
-import { Box, createStyles, makeStyles, Snackbar } from "@material-ui/core";
+import { Box, createStyles, makeStyles } from "@material-ui/core";
 import withWalletListLayout from "./walletListLayout";
 import withMainLayout from "../MainLayout";
 import { useEffect, useState } from "react";
@@ -32,17 +32,6 @@ const WalletListPage = (props) => {
     const [walletSubscribtionData, setWalletSubscribtionData] = useState({network: null, wallets: null});
 
     const [deletingWallet, setDeletingWallet] = useState(null);
-    const [snackMessage, setSnackMessage] = useState(null);
-
-    const reloadWallets = async () => {
-        const wlts = await WalletApi.getWallets();
-        setWallets(wlts);
-        const subData = {
-            network: props.network,
-            wallets: wlts
-        };
-        setWalletSubscribtionData(subData);
-    };
 
     useEffect(() => {
         async function loadWallets(){
@@ -101,16 +90,22 @@ const WalletListPage = (props) => {
 
     }, [walletSubscribtionData]);
 
+    const reloadWallets = async () => {
+        const wlts = await WalletApi.getWallets();
+        setWallets(wlts);
+        const subData = {
+            network: props.network,
+            wallets: wlts
+        };
+        setWalletSubscribtionData(subData);
+    };
+
     const onConfirmWalletDelete = async () => {
         await WalletApi.deleteWallet(deletingWallet.id);
         await reloadWallets();
         setDeletingWallet(null);
 
-        setSnackMessage('Wallet Deleted!');
-    };
-
-    const handleSnackClose = () => {
-        setSnackMessage(null);
+        props.snackbar.showSuccess('Wallet Deleted!');
     };
 
     const handleSendTokens = (wallet) => {
@@ -132,14 +127,6 @@ const WalletListPage = (props) => {
                             message={'Delete Wallet from list?'}
                             onCancel={() => setDeletingWallet(null)}
                             onConfirm={() => onConfirmWalletDelete()} />
-
-            <Snackbar open={snackMessage ? true : false}
-                        onClose={handleSnackClose}
-                        className={classes.snackbar} 
-                        autoHideDuration={6000} 
-                        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-                        message={snackMessage}>
-            </Snackbar>
         </Box>);
 }
 

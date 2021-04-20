@@ -46,7 +46,7 @@ const SelectNetworkDropDown = (props) => {
         }
 
         loadInitialNetwork();
-    }, [networks])
+    }, [networks]);
 
     useEffect(() => {
         if (!networks || selectedIndex === undefined)

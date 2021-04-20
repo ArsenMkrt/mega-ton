@@ -32,7 +32,6 @@ const SetMasterPassword = (props) => {
 
         await WalletApi.setMasterPassword(password);
 
-        setPassword('');
         if (props.onConfirm)
             props.onConfirm();
     };

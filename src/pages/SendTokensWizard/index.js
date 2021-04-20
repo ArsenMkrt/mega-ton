@@ -85,12 +85,21 @@ const SendTokensWizard = (props) => {
         if (!isValid)
             return;
         
-        setIsWalletDeploying(true);
-        await WalletApi.deployContract(network, props.history.location.state.walletId, password);
-
-        setIsWalletDeploying(false);
-
-        setActiveStep(2);
+        try
+        {
+            setIsWalletDeploying(true);
+            await WalletApi.deployContract(network, props.history.location.state.walletId, password);
+            
+            setActiveStep(2);
+        }
+        catch(ex)
+        {
+            props.snackbar.showError(ex.message);
+        }
+        finally
+        {
+            setIsWalletDeploying(false);
+        }
     };
 
     const handleSendTokens = async () => {
@@ -99,10 +108,19 @@ const SendTokensWizard = (props) => {
             return;
 
         setIsTokensSending(true);
-        await WalletApi.sendTokens(network, props.history.location.state.walletId, password, destinationAddress, sendingAmmount, comment);
-        setIsTokensSending(false);
-        
-        Navigation.goToWalletList(props.history);
+        try
+        {
+            await WalletApi.sendTokens(network, props.history.location.state.walletId, password, destinationAddress, sendingAmmount, comment);
+            Navigation.goToWalletList(props.history);
+        }
+        catch(ex)
+        {
+            props.snackbar.showError(ex.message);
+        }
+        finally
+        {
+            setIsTokensSending(false);
+        }
     };
 
     const steeps = [
