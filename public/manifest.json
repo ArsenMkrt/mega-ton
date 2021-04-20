@@ -1,6 +1,7 @@
 {
     "short_name": "MegaTon Wallet",
-    "name": "MegaTon Free Ton Wallet",
+    "name": "MegaTon",
+    "description": "Free and Secure Ton Wallet",
     "version": "1.0",
     "manifest_version": 2,
     "content_security_policy": "script-src 'self' 'wasm-eval' 'unsafe-eval'; object-src 'self'",
