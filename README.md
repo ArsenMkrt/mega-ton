@@ -1,8 +1,8 @@
-# MegaTon free Ton wallet extension 
+# MegaTon
 
-## Available Scripts
+MegaTon is free and secure Ton Crystal wallet, which can be deployed as browser extension as well as progressive web app.
 
-In the project directory, you can run:
+## Build Instruction
 
 ### `npm start`
 
@@ -16,3 +16,13 @@ You will also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.\
 The build is minified and the filenames include the hashes.\
+
+## Deployment
+
+Extension can be deployed into browser manually
+
+* run build script
+    `npm run build`
+* open `chrome://extensions`
+* enable development mode in the extensions page
+* load extension from build folder
