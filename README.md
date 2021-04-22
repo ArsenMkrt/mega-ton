@@ -2,7 +2,9 @@
 
 MegaTon is free and secure Ton Crystal wallet, which can be deployed as browser extension as well as progressive web app.
 
-![Wallet_Animation](/docs/screenshots/Animation.gif)
+<p align="center">
+  <img src="/docs/screenshots/Animation.gif" />
+</p>
 
 ## Build Instruction
 
