@@ -1,6 +1,6 @@
 # MegaTon
 
-MegaTon is free and secure Free Ton wallet, which can be deployed as browser extension as well as progressive web app.
+MegaTon is free and secure Free Ton wallet, which can be deployed as browser extension [Chrome Web Store](https://chrome.google.com/webstore/detail/megaton/kobonkepbhoanlldpglekdblbpodlljo?hl=ru&) as well as progressive web app.
 
 <br/>
 <br/>
@@ -8,7 +8,7 @@ MegaTon is free and secure Free Ton wallet, which can be deployed as browser ext
   <img src="/docs/screenshots/Animation.gif" />
 </p>
 
-[Chrome Web Store](https://chrome.google.com/webstore/detail/megaton/kobonkepbhoanlldpglekdblbpodlljo?hl=ru&)
+
 
 ## Build Instruction
 
