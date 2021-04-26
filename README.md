@@ -8,6 +8,7 @@ MegaTon is free and secure Free Ton wallet, which can be deployed as browser ext
   <img src="/docs/screenshots/Animation.gif" />
 </p>
 
+[Documentation] (/docs/software_architecture.pdf)
 
 
 ## Build Instruction
